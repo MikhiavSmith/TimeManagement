@@ -1,0 +1,16 @@
+﻿@model TimeManagement.ViewModels.HomeIndexViewModel
+
+@{
+    ViewBag.Title = "Home page";
+}
+
+<h1>All Activities</h1>
+
+@foreach (var activity in Model.Activities)
+{
+    @Html.Partial("_Summary", activity)
+}
+
+<div>
+    <a class="btn btn-primary" asp-action="Create">Add Activity</a>
+</div>

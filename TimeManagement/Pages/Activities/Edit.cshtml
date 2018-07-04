@@ -1,0 +1,26 @@
+﻿@page "{id}"
+@using TimeManagement.Pages.Activities
+
+@model EditModel
+
+<h1>Edit @Model.Activity.Name</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Activity.Id" />
+
+    <div>
+        <label asp-for="Activity.Name"></label>
+        <input asp-for="Activity.Name" />
+        <span asp-validation-for="Activity.Name"></span>
+    </div>
+
+    <div>
+        <label asp-for="Activity.Category"></label>
+        <select asp-for="Activity.Category"
+                asp-items="@Html.GetEnumSelectList<CategoryType>()"></select>
+        <span asp-validation-for="Activity.Category"></span>
+    </div>
+
+    <input type="submit" name="save" value="Save" />
+</form>

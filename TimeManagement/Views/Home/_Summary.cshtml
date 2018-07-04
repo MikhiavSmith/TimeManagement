@@ -1,0 +1,14 @@
+﻿@model Activity
+
+<section class="panel panel-default">
+    <h3 class="panel panel-heading">@Model.Name</h3>
+        <div class="panel-body">
+            Category: @Model.Category
+        </div>
+        <div>
+            @Html.ActionLink("More", "Details", "Home", new { id = Model.Id }, new { @class = "btn btn-default" })
+
+            @*<a asp-action="/Home/Details" asp.route-id="@Model.Id">More</a>*@
+            <a class="btn btn-default" asp-page="/Activities/Edit" asp-route-id="@Model.Id">Edit</a>
+        </div>
+</section>
